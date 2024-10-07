@@ -1,0 +1,25 @@
+@mixin small-screen-handler(){
+    @media screen and (max-width: #{$small-breakpoint}) { @content; }
+}
+
+@mixin medium-screen-handler(){
+    @media screen and (max-width: #{$medium-breakpoint}) { @content; }
+}
+
+@mixin large-screen-handler(){
+    @media screen and (max-width: #{$large-breakpoint}) { @content; }
+}
+
+@mixin set-header($font-weight, $font-size, $color:$red, $line-height: 0) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin set-background($image, $position, $origin:0) { background: url($image) $position $origin; }
+
+@mixin set-box-properties($width:auto, $height:auto){
+    width: $width;
+    height: $height;
+}

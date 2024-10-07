@@ -1,0 +1,44 @@
+nav {
+	@include set-box-properties(540, 190);
+    float: left;
+    text-align: right;
+	ul {
+		list-style-type: none;
+		margin-top: 95px;
+		li {
+			display: inline;
+			font-size: 0.8em;
+			margin-right: 10px;
+
+			@include large-screen-handler {
+				font-size:1em;
+				margin:0 10px;
+			}
+
+			@include medium-screen-handler {
+				font-size:0.8em;
+				margin:0 5px;
+			}
+
+			a {
+				color: $red;
+				text-decoration: none;
+				letter-spacing: -0.01em;
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+
+		@include large-screen-handler { margin-top:0; }
+	}
+
+	@include large-screen-handler {
+		width:inherit;
+		height:50px;
+		float:none;
+		text-align:center;
+	}
+
+	@include small-screen-handler { margin-bottom:40px !important; }
+}

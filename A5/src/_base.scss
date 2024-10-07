@@ -1,0 +1,105 @@
+body {
+	font-family: $default-font;
+	font-size: 1em;
+	line-height: 2em;
+	background: url($bg-img) $white repeat-x;
+    margin: 0;
+}
+
+main {
+	width:940px;
+	margin:0 auto;
+	padding: 0 10px;
+
+	@include large-screen-handler { width: 768px; }
+	@include medium-screen-handler { width:460px; }
+	@include small-screen-handler { width:300px; }
+
+}
+
+figure {
+	@include set-box-properties(400px, 190px);
+    margin: 0;
+	background: url($logo-img) no-repeat 0 50px;
+	float: left;
+	display: block;
+
+    @include large-screen-handler {
+		@include set-box-properties(inherit, 140px);
+		float:none;
+		background-position:center;
+	}
+	@include small-screen-handler {
+		background-size:contain;
+		height:100px;
+	}
+}
+
+header {
+    width: inherit;
+    margin: 0;
+	clear: both;
+	text-align: center;
+	padding-top: 40px;
+
+	img {
+		max-width: 100%;
+		height: auto;
+
+		@include medium-screen-handler{ margin-bottom:100px; }
+		@include small-screen-handler { margin-bottom:80px; }
+	}
+
+	h1 {
+        @include set-header(100, 4em);
+		@include large-screen-handler { font-size:3em; }
+        @include medium-screen-handler { font-size:2em; }
+        @include small-screen-handler {
+			&:first-child {
+				font-size: 1.4em;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	h2 {
+        @include set-header(900, 2.5em, $white);
+        margin-bottom: 70px;
+
+        @include large-screen-handler { font-size:1.5em; }
+		@include medium-screen-handler { font-size:1em; }
+		@include small-screen-handler { font-size:1.4em; }
+	}
+
+	h3 {
+        @include set-header(400, 2em, $grey);
+        margin-bottom: 50px;
+
+		@include medium-screen-handler { font-size:1.5em; }
+        @include small-screen-handler {
+			color: $white;
+			font-size:1em;
+		}
+	}
+}
+
+#headline {
+	@include set-box-properties(100%, 130px);
+	background: $red;
+	text-align: center;
+	margin: 0 auto;
+	
+	h1 {
+		@include set-header(100, 2.5em, $white);
+		padding-top: 50px;
+
+        @include medium-screen-handler {
+			font-size:2em;
+			padding-top:50px;
+		}
+        @include small-screen-handler {
+			font-size:1.5em;
+			padding-top:30px;
+		}
+	}
+}

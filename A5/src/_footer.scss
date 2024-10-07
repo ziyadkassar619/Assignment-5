@@ -1,0 +1,39 @@
+.greybar {
+	@include set-box-properties(100%, 90px);
+	
+	background: $greybar;
+	clear: both;
+	padding-top: 20px + 10px;
+
+	@include small-screen-handler { display:none; }
+}
+
+footer {
+	@include set-box-properties(100%, 120px);
+
+	background: $footer-color;
+	text-align: center;
+	color: $white;
+	padding-top: 50px;
+
+	@include small-screen-handler { text-align:center; }
+}
+.social-media {
+	margin: 0 auto;
+	width: 165px;
+	div {
+		float: left;
+		margin-right: 5px;
+		&.one { @include set-background($social-media-img, 0); }
+		&.two { @include set-background($social-media-img, -38px); }
+		&.three { @include set-background($social-media-img, -76px); }
+		&.four { @include set-background($social-media-img, -114px); }
+	}
+
+	a {
+		display: block;
+		width: 36px;
+		height: 36px;
+		text-indent: -9999px;
+	}
+}

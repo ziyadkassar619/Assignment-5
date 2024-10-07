@@ -1,0 +1,42 @@
+#content {
+	width: 940px;
+	margin: 20px auto;
+
+	@include large-screen-handler { width:inherit; }
+
+	h3 {
+		color: $grey;
+		font-size: 2em;
+		font-weight: 400;
+
+		@include small-screen-handler { font-size:1.6em; }
+	}
+
+	#testimonials {
+		width: 460px;
+		float: right;
+
+		@include large-screen-handler {
+			width:46%;
+			margin:0 2%;
+		}
+        
+        @include medium-screen-handler {
+			width:96%;
+			margin:0 2%;
+			float:none;
+		}
+    }
+    
+    #products {
+		@extend #testimonials;
+
+		float: left;
+		img {
+			float: left;
+			margin-right: 20px;
+		}
+		article { margin-bottom: 40px; }
+		h4 { line-height: 1em; }
+	}
+}
